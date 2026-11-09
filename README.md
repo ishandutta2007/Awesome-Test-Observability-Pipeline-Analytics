@@ -57,9 +57,9 @@ Commercial cloud-hosted test analytics and CI/CD observability solutions. The ta
 
 ## 💻 Open-Source Software & TestOps Frameworks 🐧
 
-Self-hosted, community-driven, and open-source platforms for test reporting, metrics extraction, and pipeline observability. The table below is sorted in descending order of GitHub stars count.
+Self-hosted, community-driven, and open-source platforms for test reporting, metrics extraction, and pipeline observability. The table below is sorted in descending order of GitHub_Stars_Count.
 
-| 📦 Repository & Framework | ⭐ GitHub Stars | 🧰 Tech Stack | 📜 License | 🔍 Observability Capabilities | 🎯 Best For |
+| 📦 Repository & Framework | ⭐ GitHub_Stars | 🧰 Tech Stack | 📜 License | 🔍 Observability Capabilities | 🎯 Best For |
 |---|---|---|---|---|---|
 | **[OpenTelemetry Collector](https://github.com/open-telemetry/opentelemetry-collector)** | [![Collector Stars](https://img.shields.io/github/stars/open-telemetry/opentelemetry-collector?style=social&color=white)](https://github.com/open-telemetry/opentelemetry-collector/stargazers) | Go | Apache 2.0 | Vendor-agnostic ingestion, processing, and exporting of CI/CD spans, test execution metrics, and pipeline traces. | Standardizing pipeline telemetry across OpenTelemetry-compatible backends |
 | **[Allure Report (Allure 2)](https://github.com/allure-framework/allure2)** | [![Allure Stars](https://img.shields.io/github/stars/allure-framework/allure2?style=social&color=white)](https://github.com/allure-framework/allure2/stargazers) | Java, TypeScript | Apache 2.0 | Multi-language interactive graphical test reporting with timeline charts, flaky status indicators, and defect grouping. | Universal framework-agnostic test execution reports |
@@ -153,7 +153,7 @@ Contributions are always welcome! To add another open-source tool, framework int
 
 1. Fork this repository.
 2. Verify that the project is actively maintained (active releases or commits within the last 12 months).
-3. If adding an open-source tool, ensure it includes an official GitHub star badge formatted as `[![Repo Stars](https://img.shields.io/github/stars/<owner>/<repo>?style=social&color=white)](https://github.com/<owner>/<repo>/stargazers)` and placed in the descending order of star counts.
+3. If adding an open-source tool, ensure it includes an official GitHub Stars_Badge formatted as `[![Repo Stars](https://img.shields.io/github/stars/<owner>/<repo>?style=social&color=white)](https://github.com/<owner>/<repo>/stargazers)` and placed in the descending order of Stars_Counts.
 4. If adding a SaaS product, provide exact starting price tiers, free tier or trial duration parameters, and company scale metrics.
 5. Submit a descriptive Pull Request.
 
