@@ -5,8 +5,7 @@
 # 🧪 Awesome Test Observability & Pipeline Analytics 📊 🚀
 
 <p align="center">
-  <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a>
-  <a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a><a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
   <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://awesome.re/badge.svg" alt="Awesome List" /></a>
   <a href="http://creativecommons.org/publicdomain/zero/1.0/"><img src="https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg" alt="License: CC0-1.0" /></a>
   <a href="https://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome" /></a>
@@ -26,8 +25,8 @@
 - [💻 Open-Source Software & TestOps Frameworks](#-open-source-software--testops-frameworks)
 - [📊 Feature & Architectural Matrix](#-feature--architectural-matrix)
 - [💡 Core Architectural Concepts](#-core-architectural-concepts)
-- [📈 Star History](#-star-history)
 - [💖 Support & Community](#-support--community)
+- [📈 Star History](#-star-history)
 - [🤝 Contributing](#-contributing)
 - [📄 License](#-license)
 
@@ -136,7 +135,7 @@ Thank you for visiting this curated directory! If this guide helped improve your
 - ⭐ **Star this repository** to help other engineers discover modern TestOps solutions.
 - 🍴 **Fork the repository** to contribute new benchmarks, platform features, or open-source tools.
 - 📢 **Share with your team** on LinkedIn, X/Twitter, or developer Discord communities.
-- ☕ **Sponsor ongoing research**:  
+- ☕ **Buy a coffee & sponsor ongoing research:**  
   [![GitHub Sponsors](https://img.shields.io/badge/Sponsor-%E2%99%A5-ea4aaa?style=for-the-badge&logo=github)](https://github.com/sponsors/ishandutta2007)  
   Support directly through the [GitHub Sponsor Dashboard](https://github.com/sponsors/ishandutta2007)! Every contribution is deeply appreciated.
 
