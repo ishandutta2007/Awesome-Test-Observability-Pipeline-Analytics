@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="360" style="background:#0b0f19;border-radius:12px;overflow:hidden;font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070a13" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#060913" />
+    </linearGradient>
+
+    <linearGradient id="cyan-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <linearGradient id="accent-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0.3"/>
+    </linearGradient>
+
+    <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="tag-border" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0.8"/>
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Animated Data Flow Line Dash -->
+    <style>
+      @keyframes dashMove {
+        to {
+          stroke-dashoffset: -1000;
+        }
+      }
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.35; transform: scale(1); }
+        50% { opacity: 0.7; transform: scale(1.08); }
+      }
+      @keyframes floatParticle {
+        0% { transform: translateY(0px) translateX(0px); opacity: 0.3; }
+        50% { transform: translateY(-15px) translateX(10px); opacity: 0.8; }
+        100% { transform: translateY(0px) translateX(0px); opacity: 0.3; }
+      }
+      @keyframes pulseNode {
+        0%, 100% { r: 4px; fill-opacity: 0.6; }
+        50% { r: 7px; fill-opacity: 1; }
+      }
+      .flow-stream {
+        stroke-dasharray: 12, 16;
+        animation: dashMove 35s linear infinite;
+      }
+      .flow-fast {
+        stroke-dasharray: 8, 12;
+        animation: dashMove 20s linear infinite;
+      }
+      .pulse-circle {
+        animation: pulseGlow 6s ease-in-out infinite;
+        transform-origin: center;
+      }
+      .node-pulse {
+        animation: pulseNode 3s ease-in-out infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="360" fill="url(#bg-grad)" />
+
+  <!-- Ambient Animated Light Flares in Background -->
+  <circle cx="180" cy="90" r="140" fill="url(#cyan-glow)" filter="url(#glow)" class="pulse-circle" />
+  <circle cx="1020" cy="270" r="160" fill="url(#accent-purple)" filter="url(#glow)" class="pulse-circle" style="animation-delay: -3s;" />
+
+  <!-- Grid Tech Lines -->
+  <g opacity="0.12" stroke="#60a5fa" stroke-width="1">
+    <line x1="0" y1="60" x2="1200" y2="60" />
+    <line x1="0" y1="120" x2="1200" y2="120" />
+    <line x1="0" y1="180" x2="1200" y2="180" />
+    <line x1="0" y1="240" x2="1200" y2="240" />
+    <line x1="0" y1="300" x2="1200" y2="300" />
+    <line x1="150" y1="0" x2="150" y2="360" />
+    <line x1="300" y1="0" x2="300" y2="360" />
+    <line x1="450" y1="0" x2="450" y2="360" />
+    <line x1="600" y1="0" x2="600" y2="360" />
+    <line x1="750" y1="0" x2="750" y2="360" />
+    <line x1="900" y1="0" x2="900" y2="360" />
+    <line x1="1050" y1="0" x2="1050" y2="360" />
+  </g>
+
+  <!-- Dynamic Animated Pipeline Data Streams in Lower/Mid Layer -->
+  <g fill="none">
+    <path d="M -50,290 C 250,330 400,210 700,280 S 1050,330 1250,270" stroke="#0ea5e9" stroke-width="2.5" opacity="0.6" class="flow-stream" />
+    <path d="M -50,70 C 200,30 500,160 800,90 S 1100,40 1250,110" stroke="#8b5cf6" stroke-width="2" opacity="0.45" class="flow-fast" />
+    <path d="M -50,210 C 350,150 650,340 950,210 S 1150,160 1250,230" stroke="#ec4899" stroke-width="1.8" opacity="0.35" class="flow-stream" style="animation-delay: -5s;" />
+  </g>
+
+  <!-- Animated Pipeline Step Nodes -->
+  <g>
+    <circle cx="210" cy="295" r="5" fill="#38bdf8" class="node-pulse" style="animation-delay: 0s;" />
+    <circle cx="480" cy="245" r="5" fill="#818cf8" class="node-pulse" style="animation-delay: 1s;" />
+    <circle cx="750" cy="285" r="5" fill="#c084fc" class="node-pulse" style="animation-delay: 2s;" />
+    <circle cx="1020" cy="305" r="5" fill="#ec4899" class="node-pulse" style="animation-delay: 1.5s;" />
+  </g>
+
+  <!-- High-contrast Badge / Top Pill -->
+  <g transform="translate(600, 52)">
+    <rect x="-185" y="-16" width="370" height="32" rx="16" fill="#1e293b" stroke="url(#tag-border)" stroke-width="1.5" opacity="0.95" />
+    <text x="0" y="5" fill="#38bdf8" font-size="12" font-weight="700" letter-spacing="2.5" text-anchor="middle">
+      ⚡ TEST OBSERVABILITY &amp; AUTOMATION
+    </text>
+  </g>
+
+  <!-- Main Foreground Content (Clear & High Contrast) -->
+  <!-- Title -->
+  <text x="600" y="130" fill="url(#title-grad)" font-size="34" font-weight="900" letter-spacing="-0.5" text-anchor="middle" filter="drop-shadow(0px 3px 12px rgba(0,0,0,0.8))">
+    Awesome Test Platform Automation &amp; Observability
+  </text>
+
+  <!-- Subtitle -->
+  <text x="600" y="168" fill="#e2e8f0" font-size="16" font-weight="500" letter-spacing="0.2" text-anchor="middle" filter="drop-shadow(0px 2px 8px rgba(0,0,0,0.9))">
+    Curated Cloud Grids, REST APIs, CI/CD Pipeline Analytics &amp; E2E Testing Frameworks
+  </text>
+
+  <!-- Interactive / Structured Pill Badges in Foreground -->
+  <g transform="translate(600, 222)">
+    <!-- Pill 1: Selenium -->
+    <g transform="translate(-360, 0)">
+      <rect x="-55" y="-18" width="110" height="36" rx="8" fill="#111827" stroke="#38bdf8" stroke-width="1.2" opacity="0.9" />
+      <text x="0" y="5" fill="#f8fafc" font-size="13" font-weight="600" text-anchor="middle">Selenium 4</text>
+    </g>
+
+    <!-- Pill 2: Cypress -->
+    <g transform="translate(-215, 0)">
+      <rect x="-55" y="-18" width="110" height="36" rx="8" fill="#111827" stroke="#4ade80" stroke-width="1.2" opacity="0.9" />
+      <text x="0" y="5" fill="#f8fafc" font-size="13" font-weight="600" text-anchor="middle">Cypress E2E</text>
+    </g>
+
+    <!-- Pill 3: Playwright -->
+    <g transform="translate(-70, 0)">
+      <rect x="-55" y="-18" width="110" height="36" rx="8" fill="#111827" stroke="#22d3ee" stroke-width="1.2" opacity="0.9" />
+      <text x="0" y="5" fill="#f8fafc" font-size="13" font-weight="600" text-anchor="middle">Playwright</text>
+    </g>
+
+    <!-- Pill 4: Cloud Grids -->
+    <g transform="translate(75, 0)">
+      <rect x="-55" y="-18" width="110" height="36" rx="8" fill="#111827" stroke="#a855f7" stroke-width="1.2" opacity="0.9" />
+      <text x="0" y="5" fill="#f8fafc" font-size="13" font-weight="600" text-anchor="middle">Cloud Grids</text>
+    </g>
+
+    <!-- Pill 5: REST APIs -->
+    <g transform="translate(220, 0)">
+      <rect x="-55" y="-18" width="110" height="36" rx="8" fill="#111827" stroke="#f472b6" stroke-width="1.2" opacity="0.9" />
+      <text x="0" y="5" fill="#f8fafc" font-size="13" font-weight="600" text-anchor="middle">REST APIs</text>
+    </g>
+
+    <!-- Pill 6: CI/CD Analytics -->
+    <g transform="translate(365, 0)">
+      <rect x="-55" y="-18" width="110" height="36" rx="8" fill="#111827" stroke="#f59e0b" stroke-width="1.2" opacity="0.9" />
+      <text x="0" y="5" fill="#f8fafc" font-size="13" font-weight="600" text-anchor="middle">Pipeline BI</text>
+    </g>
+  </g>
+
+  <!-- Bottom Metric / Tagline strip -->
+  <g transform="translate(600, 310)">
+    <text x="0" y="0" fill="#94a3b8" font-size="13" font-weight="400" letter-spacing="0.4" text-anchor="middle">
+      🚀 High-Speed Automation • 📊 Flaky Test Observability • 🌐 Enterprise Cross-Browser Testing
+    </text>
+  </g>
+</svg>
