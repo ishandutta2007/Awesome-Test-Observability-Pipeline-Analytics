@@ -1,105 +1,172 @@
-# Awesome-Test-Observability-Pipeline-Analytics
+# Awesome Testing Framework Integrations (Selenium, Cypress, Playwright)
 
-# Awesome Test Observability & Pipeline Analytics
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+[![Track Awesome List](https://www.trackawesomelist.com/badge.svg)](https://www.trackawesomelist.com/ishandutta2007/Awesome-Testing-Framework-Integrations-Selenium-Cypress-Playwright/)
+[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
 
-> A curated list of top Test Observability and Pipeline Analytics platforms — both SaaS/Hosted commercial solutions and open-source alternatives for monitoring test suite health, debugging failures, and analyzing CI/CD pipeline performance.
+> A curated list of top Testing Framework Integration platforms — featuring commercial cloud testing services and leading open-source test automation frameworks for Selenium, Cypress, Playwright, Appium, and beyond.  
 > 🌟 Star this repo if you find it useful! 🌟
 
 ---
 
 ## 📋 Table of Contents
 
+- [Sector Overview & Market Dynamics](#-sector-overview--market-dynamics)
 - [SaaS / Hosted Platforms](#-saas--hosted-platforms)
-  - [BrowserStack Test Observability](#browserstack-test-observability)
-  - [Datadog CI Visibility](#datadog-ci-visibility)
-  - [Cypress Cloud Analytics](#cypress-cloud-analytics)
-  - [SeaLights](#sealights)
-  - [Launchable](#launchable)
-  - [Develocity (Gradle Enterprise)](#develocity-gradle-enterprise)
+  - [Overview Table](#saas-platforms-overview)
+  - [Platform Deep Dives](#saas-platform-details)
 - [Open-Source Software](#-open-source-software)
-  - [ReportPortal](#reportportal)
-  - [Allure TestOps](#allure-testops)
+  - [Open-Source Solutions Overview](#open-source-frameworks-overview)
+  - [Open-Source Deep Dives](#open-source-framework-details)
 - [Comparison at a Glance](#-comparison-at-a-glance)
 - [Contributing](#-contributing)
+- [License](#-license)
+
+---
+
+## 🌐 Sector Overview & Market Dynamics
+
+The global automated software testing market is estimated at **$24 billion to $34 billion** (projected to reach over $40 billion by 2026 at a CAGR of ~14–17%). The market is **moderately fragmented**: cloud-hosted execution grids, scalable device infrastructure, and AI-driven quality engineering platforms are concentrated among a few well-capitalized leaders (such as BrowserStack, Sauce Labs, and LambdaTest), while the foundational testing runner ecosystem is widely fragmented across community-driven open-source frameworks (Playwright, Cypress, Selenium, Puppeteer, Appium, and Robot Framework).
 
 ---
 
 ## 🟦 SaaS / Hosted Platforms
 
-Commercial, cloud-hosted Test Observability and Pipeline Analytics platforms. These are not open-source but are included as reference points for feature comparison.
+Commercial, cloud-hosted Testing Framework Integration platforms that provide real device testing matrices, browser grid orchestration, and CI/CD pipeline acceleration.
 
-### BrowserStack Test Observability
-**Type:** Test reporting and debugging platform
-BrowserStack Test Observability is a platform-agnostic tool that works whether tests run on BrowserStack, locally, or on other cloud providers. It instruments tests via the BrowserStack SDK to automatically collect test data, logs, screenshots, CI information, and Git metadata without manual setup [citation:1][citation:12]. Key capabilities include real-time test reports with historical execution status, **AI-based tagging to auto-identify false failures** (flaky, always-failing, new failures), triage that categorizes failures into product, automation, or environment issues, and consolidated logs (screenshot, video, framework, terminal) in a chronological timeline view [citation:1]. It supports frameworks including TestNG, WebdriverIO, Cypress, Playwright, Nightwatch, MochaJS, and JUnit reports, with a JUnit XML upload endpoint for unsupported frameworks [citation:1]. **Note:** This is test observability, not application observability — it identifies, monitors, and debugs test cases and suite health rather than application bugs [citation:1].
+### SaaS Platforms Overview
 
-### Datadog CI Visibility
-**Type:** CI pipeline and test observability within Datadog
-Datadog CI Visibility provides visibility into CI pipeline health and test results, showing pipeline runs, job failures, performance bottlenecks, and reliability trends over time . It supports **Test Visibility** with automatic instrumentation for Node.js frameworks including Jest, Mocha, Vitest, Cucumber, Cypress, Playwright, and Selenium via the `dd-trace` library [citation:13]. Key features include **Intelligent Test Runner (ITR)** which skips tests unaffected by a code change to reduce CI time, **Early Flake Detection** that runs new tests multiple times to catch flakiness before merge, and **flaky test quarantine** so known flaky tests don't block pipelines [citation:13]. Pipeline-level features include failure analysis using LLM models, critical path analysis, and infrastructure metric correlation . Supports CI providers including GitHub Actions, GitLab, Jenkins, CircleCI, Buildkite, Bitbucket Pipelines, Azure Pipelines, and TeamCity [citation:13].
+The table below lists the major commercial cloud testing platforms sorted descending by company scale (valuation / annual revenue):
 
-### Cypress Cloud Analytics
-**Type:** Test analytics for Cypress projects
-Cypress Cloud provides project-level analytics for run trends, test suite size, and flake rates, alongside **Enterprise Reporting** that spans across projects in an organization to spot patterns, track test usage, and ensure consistency [citation:9]. The **Data Extract API** allows retrieval of both aggregate and raw test data in various formats for use in external analytics systems or automated workflows [citation:9]. This is focused on Cypress test suites and is not applicable to other frameworks.
+| Platform | Company Scale / Valuation | Starting Pricing (Paid) | Free Tier / Trial Limit | Key Framework Integrations |
+|:---|:---|:---|:---|:---|
+| **[BrowserStack](https://www.browserstack.com/)** | **~$4.0B Valuation** (~$230M ARR) | $29/mo (Live) / $59/mo (Desktop Automate, billed annually) | Free trial with 100 automated testing minutes & up to 5 parallel sessions | Selenium, Cypress, Playwright, Puppeteer, Appium, Nightwatch.js |
+| **[Sauce Labs](https://saucelabs.com/)** | **~$613M Valuation** (~$92M ARR) | $39/mo (Virtual Cloud, 1 parallel session) / $199/mo (Real Device Cloud) | 28-day free trial with 60 testing minutes & 3 concurrent VMs | Selenium, Cypress, Playwright, WebdriverIO, TestCafe, Appium |
+| **[LambdaTest](https://www.lambdatest.com/)** | **~$400M Valuation** (~$25M–$30M ARR) | $79/mo (Desktop Web Automation, billed annually) / $99/mo (Web & Mobile) | Free lifetime plan with 100 automated testing minutes & 2 parallel tests | Selenium, Cypress, Playwright, Puppeteer, WebdriverIO, Appium |
 
-### SeaLights
-**Type:** Test optimization and selection
-SeaLights provides **Test Optimization Strategy** controls that let teams choose how aggressively tests are optimized per stage. **Conservative** runs every impacted test (best for continuous delivery), **Moderate** targets ~80% of impacted tests prioritized by risk (recommended default), and **Aggressive** targets ~60% for high-volume code pushes with manual QA safety nets [citation:5]. Each level pairs with a **Periodic Full Run** policy to clear skipped tests on a schedule (daily, weekly, monthly, or custom). A centralized hub shows every test stage, its current level, and last month's savings [citation:5].
+---
 
-### Launchable
-**Type:** Predictive test selection
-Launchable provides **Predictive Test Selection (PTS)** that analyzes code changes to predict which tests are most relevant, reducing test execution time. The May 2025 update enhanced the selection algorithm to use **file path relevance**, understanding how code file paths and test paths relate to improve accuracy even in new or less-tested codebase areas [citation:6]. It also added **attached log search**, allowing teams to search logs generated in external systems at the time of a test session run directly within Launchable for faster root cause analysis [citation:6].
+### SaaS Platform Details
 
-### Develocity (Gradle Enterprise)
-**Type:** Build and test analytics for JVM ecosystems
-Develocity (formerly Gradle Enterprise) provides build and test analytics for Gradle, Maven, sbt, npm, Python, and Bazel builds. A new **API endpoint** (`/api/tests/build/{id}`) retrieves detailed test execution data for a build, including which tests were unstable or slow, enabling custom test reporting (e.g., informing PR authors of test failures related to their changes) [citation:7]. The **IntelliJ Plugin (Beta)** brings real-time build insights directly into the IDE, including a live timeline of task execution and resource usage graphs [citation:7].
+#### BrowserStack Automate
+* **Primary Use:** Cross-browser cloud testing with multi-framework orchestration
+* **Overview:** BrowserStack Automate provides an elastic cloud grid for running Selenium, Cypress, Playwright, and Puppeteer test suites at scale without maintaining local device farms. Its TurboScale offering is framework-agnostic, supporting functional UI and integration tests with minimal configuration changes. The platform also includes BrowserStack Local tunneling, comprehensive REST APIs, and native GitHub Actions / GitLab CI integrations.
+* **Best for:** Teams seeking a managed cloud grid for existing Selenium, Cypress, or Playwright suites with immediate coverage across 3,000+ real desktop browsers and mobile devices.
+
+#### Sauce Labs
+* **Primary Use:** Cloud testing platform with enterprise framework verification and CDP/BiDi debugging
+* **Overview:** Sauce Labs delivers enterprise-grade test execution across virtual and real device clouds. It provides official quickstarts and native support for Cypress, Playwright, Selenium, TestCafe, and WebdriverIO across multiple programming languages (C#, Java, JavaScript, Python, Ruby). Sauce Labs also features Chrome DevTools Protocol (CDP) and WebDriver BiDi support for low-level network logging and debugging on cloud sessions.
+* **Best for:** Teams requiring mature test infrastructure with deep framework validation, enterprise SSO, and advanced bidirectional debugging.
+
+#### LambdaTest (TestMu AI)
+* **Primary Use:** AI-native cloud testing grid powered by HyperExecute orchestration
+* **Overview:** LambdaTest supports Selenium, Cypress, Playwright, Puppeteer, and 45+ testing frameworks on its cloud grid. Its HyperExecute test execution orchestrator achieves low latency by clustering test runs and intelligently caching dependencies. LambdaTest also provides production-grade Agent Skills for AI coding assistants (such as Copilot, Cursor, and Claude Code) and KaneAI for natural language test creation.
+* **Best for:** Development teams wanting lightning-fast parallel execution in CI/CD pipelines paired with AI-driven test orchestration.
 
 ---
 
 ## 🟩 Open-Source Software
 
-Self-hosted, community-driven Test Observability and Pipeline Analytics tools. The open-source ecosystem in this category is notably limited compared to commercial offerings.
+Community-driven testing frameworks and libraries that form the foundation of modern automated testing and end-to-end web/mobile quality assurance.
 
-### ReportPortal
-**Stack:** Java / PostgreSQL / OpenSearch | **License:** Apache 2.0
-ReportPortal is an open-source **TestOps service** that provides real-time test result analysis and reporting. It is distributed under Apache 2.0 and free to use and modify, even for commercial purposes, with two paid premium features (Quality Gates and SCIM Server) and optional support/SaaS offerings [citation:4]. Key capabilities include **real-time integration** with Jenkins, Jira, and major testing frameworks; **automatic analysis** using AI-based defect triage to identify root causes and flag results; **collaborative analysis** allowing test cases to be associated with product bugs, automation issues, or system issues; and **historical execution data** for trend analysis [citation:4]. The architecture includes an API service, UAT authentication service, Analyzer service for auto-analysis, and a UI service, backed by PostgreSQL and OpenSearch [citation:15]. **Trade-off:** As an open-source TestOps platform, it provides strong test result analysis but is not a full pipeline observability tool like Datadog CI Visibility.
+### Open-Source Frameworks Overview
 
-### Allure TestOps
-**Stack:** (Check repository) | **License:** Open Source (core) / Commercial
-Allure TestOps is built on the open-source **Allure Report** standard and extends it into a full test management and analytics platform. The open-source Allure Report is Apache 2.0, while Allure TestOps itself is a commercial product with a starting price of $30 per user per month . Allure TestOps provides a **built-in MCP Server** (from release 26.1.1, public beta) with 13 tools for AI agent integration, allowing agents to author and maintain test cases, with 8 of the 13 tools being write operations [citation:3]. It maintains the open Allure standard, meaning teams can upgrade from the free Allure Report to TestOps without abandoning their existing reporting format. **Important distinction:** Allure Report is the open-source framework-agnostic HTML report generator; Allure TestOps is the commercial management platform built on top of it.
+The table below lists popular open-source testing frameworks and platforms sorted descending by GitHub star count:
+
+| Framework / Tool | Stars | Stack | License | Description & Integration Highlights |
+|:---|:---|:---|:---|:---|
+| **[Playwright](https://github.com/microsoft/playwright)** | [![Playwright Stars](https://img.shields.io/github/stars/microsoft/playwright?style=social&color=white)](https://github.com/microsoft/playwright/stargazers) | Node.js / TypeScript / Python / Java / .NET | Apache 2.0 | Next-generation end-to-end testing with native auto-wait, resilient locators, network mocking, and multi-browser support (Chromium, Firefox, WebKit). |
+| **[Puppeteer](https://github.com/puppeteer/puppeteer)** | [![Puppeteer Stars](https://img.shields.io/github/stars/puppeteer/puppeteer?style=social&color=white)](https://github.com/puppeteer/puppeteer/stargazers) | TypeScript / JavaScript | Apache 2.0 | High-level Chrome DevTools Protocol client library for headless Chrome automation, performance profiling, and PDF/screenshot generation. |
+| **[Cypress](https://github.com/cypress-io/cypress)** | [![Cypress Stars](https://img.shields.io/github/stars/cypress-io/cypress?style=social&color=white)](https://github.com/cypress-io/cypress/stargazers) | JavaScript / TypeScript | MIT | Fast, developer-centric browser test runner that runs directly inside the browser run-loop with time-travel debugging and zero setup. |
+| **[Selenium](https://github.com/SeleniumHQ/selenium)** | [![Selenium Stars](https://img.shields.io/github/stars/SeleniumHQ/selenium?style=social&color=white)](https://github.com/SeleniumHQ/selenium/stargazers) | Java / Python / JavaScript / C# / Ruby | Apache 2.0 | The long-standing standard for browser automation using the W3C WebDriver standard, with extensive community ecosystem and Selenium Grid 4 support. |
+| **[k6](https://github.com/grafana/k6)** | [![k6 Stars](https://img.shields.io/github/stars/grafana/k6?style=social&color=white)](https://github.com/grafana/k6/stargazers) | Go / JavaScript | AGPL 3.0 | Modern developer-first load and performance testing tool featuring a built-in REST control API and browser testing capabilities via k6 browser. |
+| **[Appium](https://github.com/appium/appium)** | [![Appium Stars](https://img.shields.io/github/stars/appium/appium?style=social&color=white)](https://github.com/appium/appium/stargazers) | Node.js / JavaScript | Apache 2.0 | The industry standard for mobile test automation across iOS (XCUITest), Android (UiAutomator2), and desktop apps via the WebDriver REST API. |
+| **[Robot Framework](https://github.com/robotframework/robotframework)** | [![Robot Framework Stars](https://img.shields.io/github/stars/robotframework/robotframework?style=social&color=white)](https://github.com/robotframework/robotframework/stargazers) | Python | Apache 2.0 | Generic open-source keyword-driven automation framework for acceptance testing and robotic process automation (RPA) with rich library integrations. |
+| **[Nightwatch.js](https://github.com/nightwatchjs/nightwatch)** | [![Nightwatch Stars](https://img.shields.io/github/stars/nightwatchjs/nightwatch?style=social&color=white)](https://github.com/nightwatchjs/nightwatch/stargazers) | JavaScript / TypeScript | MIT | Integrated end-to-end testing solution with built-in test runner, assertions, and page object model support built on W3C WebDriver. |
+| **[TestCafe](https://github.com/DevExpress/testcafe)** | [![TestCafe Stars](https://img.shields.io/github/stars/DevExpress/testcafe?style=social&color=white)](https://github.com/DevExpress/testcafe/stargazers) | JavaScript / TypeScript | MIT | Pure Node.js end-to-end testing framework that runs without WebDriver or browser plugins by injecting scripts directly into tested web pages. |
+| **[WebdriverIO](https://github.com/webdriverio/webdriverio)** | [![WebdriverIO Stars](https://img.shields.io/github/stars/webdriverio/webdriverio?style=social&color=white)](https://github.com/webdriverio/webdriverio/stargazers) | JavaScript / TypeScript | MIT | Extensible next-generation test automation framework for Node.js supporting both WebDriver and Chrome DevTools Protocol integrations. |
+| **[Karate](https://github.com/karatelabs/karate)** | [![Karate Stars](https://img.shields.io/github/stars/karatelabs/karate?style=social&color=white)](https://github.com/karatelabs/karate/stargazers) | Java | Apache 2.0 | Comprehensive test framework unifying API testing, API mock services, performance benchmarking, and UI test automation in a single runner. |
+| **[Selenoid](https://github.com/aerokube/selenoid)** | [![Selenoid Stars](https://img.shields.io/github/stars/aerokube/selenoid?style=social&color=white)](https://github.com/aerokube/selenoid/stargazers) | Go | Apache 2.0 | High-performance, lightweight implementation of Selenium hub running isolated browsers within Docker containers, controlled via a REST API. |
+| **[ReportPortal](https://github.com/reportportal/reportportal)** | [![ReportPortal Stars](https://img.shields.io/github/stars/reportportal/reportportal?style=social&color=white)](https://github.com/reportportal/reportportal/stargazers) | Java / React / Docker | Apache 2.0 | AI-powered centralized test analytics and dashboard service providing real-time logging and REST APIs for all major test frameworks. |
+
+---
+
+### Open-Source Framework Details
+
+#### Playwright
+* **Repository:** [microsoft/playwright](https://github.com/microsoft/playwright)
+* **Stack:** TypeScript / JavaScript / Python / Java / .NET | **License:** Apache 2.0
+* **Overview:** Playwright is built specifically for modern single-page web applications. It offers cross-browser testing across Chromium, Firefox, and WebKit on Windows, macOS, and Linux. Features include auto-waiting mechanisms, full network interception, tracing, video capture, and parallel test workers.
+
+#### Puppeteer
+* **Repository:** [puppeteer/puppeteer](https://github.com/puppeteer/puppeteer)
+* **Stack:** TypeScript / JavaScript | **License:** Apache 2.0
+* **Overview:** Puppeteer provides a simple and ergonomic API to control Chrome or Chromium over the DevTools Protocol. It excels at automated smoke testing, server-side rendering, accessibility audits, and high-fidelity PDF/image capture.
+
+#### Cypress
+* **Repository:** [cypress-io/cypress](https://github.com/cypress-io/cypress)
+* **Stack:** JavaScript / TypeScript | **License:** MIT
+* **Overview:** Cypress executes tests in the same run loop as the application under test, granting native access to DOM elements, window objects, and network traffic. It is widely praised for its interactive Test Runner and detailed time-travel debugging.
+
+#### Selenium WebDriver
+* **Repository:** [SeleniumHQ/selenium](https://github.com/SeleniumHQ/selenium)
+* **Stack:** Java / Python / C# / Ruby / JavaScript | **License:** Apache 2.0
+* **Overview:** The cornerstone of web browser automation, Selenium drives browsers natively through the W3C WebDriver standard. With Selenium Grid 4, it features a distributed, self-healing architecture accessible via HTTP/REST endpoints.
+
+#### Grafana k6
+* **Repository:** [grafana/k6](https://github.com/grafana/k6)
+* **Stack:** Go / JavaScript | **License:** AGPL 3.0
+* **Overview:** k6 is an open-source performance testing tool designed for developers and DevOps teams. Using clean JavaScript test scripts and an execution engine written in Go, k6 provides live REST control APIs and hybrid protocol-plus-browser testing.
+
+#### Appium
+* **Repository:** [appium/appium](https://github.com/appium/appium)
+* **Stack:** Node.js | **License:** Apache 2.0
+* **Overview:** Appium extends the WebDriver protocol to mobile and desktop apps. It enables unified automated testing on iOS (XCUITest), Android (UiAutomator2/Espresso), Windows, and macOS without requiring app re-compilation.
+
+#### Robot Framework
+* **Repository:** [robotframework/robotframework](https://github.com/robotframework/robotframework)
+* **Stack:** Python | **License:** Apache 2.0
+* **Overview:** Robot Framework is a keyword-driven test automation framework with clear, human-readable tabular syntax. It connects seamlessly to Selenium, Appium, REST APIs, and database libraries, making it popular in enterprise QA environments.
+
+#### WebdriverIO
+* **Repository:** [webdriverio/webdriverio](https://github.com/webdriverio/webdriverio)
+* **Stack:** JavaScript / TypeScript | **License:** MIT
+* **Overview:** A custom implementation of the W3C WebDriver and Chrome DevTools Protocol specifications for Node.js. It features a rich ecosystem of plugins, reporters, and native integrations with cloud testing providers.
 
 ---
 
 ## 📊 Comparison at a Glance
 
-| Software | License | Type | Flaky Detection | Test Selection | Self-Hosted | Best For |
-|----------|---------|------|-----------------|----------------|-------------|----------|
-| **BrowserStack** | Proprietary | Test observability | ✅ AI-based | ❌ | ❌ | Framework-agnostic test debugging |
-| **Datadog CI Visibility** | Proprietary | Pipeline + test observability | ✅ Early detection | ✅ Intelligent Test Runner | ❌ | Full CI/CD + test correlation |
-| **Cypress Cloud** | Proprietary | Test analytics | ✅ | ❌ | ❌ | Cypress-specific analytics |
-| **SeaLights** | Proprietary | Test optimization | (Check) | ✅ Tiered selection | ❌ | Risk-matched test optimization |
-| **Launchable** | Proprietary | Predictive test selection | (Check) | ✅ Path relevance | ❌ | ML-driven test subsetting |
-| **Develocity** | Proprietary | Build/test analytics | ✅ (unstable tests) | ❌ | (Enterprise) | JVM build + test insights |
-| **ReportPortal** | Apache 2.0 | TestOps platform | ✅ Auto-analysis | ❌ | ✅ | Open-source test result analysis |
-| **Allure TestOps** | Open core / Commercial | Test management | (Check) | ❌ | (Self-hosted option) | Allure Report upgraders |
+| Framework / Service | Deployment | Ecosystem Type | Multi-Browser Support | Mobile Testing | Best For |
+|:---|:---|:---|:---|:---|:---|
+| **BrowserStack Automate** | Cloud SaaS | Managed Cloud Grid | Chromium, Firefox, Safari, Edge | Real iOS & Android | Enterprise multi-browser testing at scale |
+| **Sauce Labs** | Cloud SaaS | Managed Cloud Grid | Chromium, Firefox, Safari, Edge | Real & Virtual Devices | Validated enterprise framework integrations |
+| **LambdaTest** | Cloud SaaS | Managed Cloud Grid | Chromium, Firefox, Safari, Edge | Real & Virtual Devices | High-speed parallel testing with HyperExecute |
+| **Playwright** | Self-Hosted | Framework | Chromium, Firefox, WebKit | Emulation | Resilient, modern cross-browser web testing |
+| **Puppeteer** | Self-Hosted | Driver / Library | Chromium, Firefox (Nightly) | Emulation | Headless Chrome automation & scraping |
+| **Cypress** | Self-Hosted | Framework & Runner | Chrome-family, Firefox, Edge | Responsive Emulation | Developer-friendly frontend component & E2E tests |
+| **Selenium WebDriver** | Self-Hosted | Standard & Framework | All major browsers | Via Appium | Maximum ecosystem compatibility & custom grids |
+| **Grafana k6** | Self-Hosted | Load Testing & Browser | Chromium (via k6 browser) | N/A | High-throughput load & performance benchmarking |
+| **Appium** | Self-Hosted | Mobile Framework | Mobile Safari, Chrome | Native iOS & Android | Cross-platform mobile app automation |
+| **Robot Framework** | Self-Hosted | Keyword Automation | Via Selenium/Playwright | Via Appium | Keyword-driven enterprise acceptance testing |
+| **WebdriverIO** | Self-Hosted | Framework | All major browsers | Native & Mobile Web | Modular, plugin-driven Node.js automation |
+| **TestCafe** | Self-Hosted | Framework | All major browsers | Mobile Web | Zero-configuration testing without WebDriver |
+| **Selenoid** | Self-Hosted | Docker Grid | All major browsers | Android (containers) | High-density lightweight local/cloud browser grid |
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! If you know of an open-source Test Observability or Pipeline Analytics tool that should be listed here, please open a pull request with:
+Contributions are welcome! If you know of an open-source testing framework, cloud platform integration, or testing infrastructure tool that should be included:
 
-- Project name and URL
-- Brief description (1–2 sentences)
-- Stack and license
-- Why it stands out
-
-Please ensure the project is actively maintained (releases within the last 12 months) and genuinely open-source. Note that the open-source ecosystem for **dedicated test observability and pipeline analytics** is very limited. **ReportPortal** is the most mature open-source option, providing AI-based test result analysis and real-time reporting. **Allure TestOps** has an open-source core in Allure Report but the full TestOps platform is commercial. For full pipeline observability, commercial platforms like Datadog CI Visibility and BrowserStack remain significantly more capable than available open-source alternatives.
+1. Fork this repository.
+2. Create a new branch: `git checkout -b feature/new-framework`.
+3. Add the tool to the appropriate table and detail section with its name, GitHub star badge, description, and links.
+4. Commit your changes: `git commit -m "Add <Framework-Name>"`.
+5. Push to your branch and submit a Pull Request.
 
 ---
 
 ## 📄 License
 
-This list is released under CC0 1.0 Universal (Public Domain). The software projects listed retain their respective licenses.
-
----
-
-⭐ **If this list helped you discover a useful tool, please star the repo!** ⭐
+This repository and its curated documentation are made available under the [Creative Commons Zero v1.0 Universal](LICENSE) (CC0 1.0) Public Domain Dedication.
